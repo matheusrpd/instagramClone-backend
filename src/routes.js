@@ -6,6 +6,8 @@ const PostController = require("./controllers/PostController");
 const LikeController = require("./controllers/LikeController");
 
 const routes = new express.Router();
+// Dar suporte permite que express entenda o corpo da
+// requisição de maneira multipart form
 const upload = multer(uploadConfig);
 
 routes.get("/posts", PostController.index);

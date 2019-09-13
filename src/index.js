@@ -5,6 +5,10 @@ const cors = require("cors");
 
 const app = express();
 
+// Dando suporte a conexão a http e socket.io
+const server = require("http").Server(app);
+const io = require("socket.io")(server);
+
 mongoose.connect(
   "mongodb+srv://admin:asd147890@cluster0-sh8z3.mongodb.net/test?retryWrites=true&w=majority",
   {
@@ -12,6 +16,12 @@ mongoose.connect(
     useUnifiedTopology: true
   }
 );
+
+// Dando acesso a todos os arquivos o socket.io
+app.use((req, res, next) => {
+  req.io = io;
+  next();
+});
 
 // Acessa os arquivos estáticos
 app.use(
@@ -24,4 +34,4 @@ app.use(cors());
 
 app.use(require("./routes"));
 
-app.listen(3333);
+server.listen(3333);

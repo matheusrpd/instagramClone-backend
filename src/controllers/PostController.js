@@ -31,6 +31,8 @@ module.exports = {
       image
     });
 
+    req.io.emit("post", post);
+
     return res.json(post);
   }
 };
