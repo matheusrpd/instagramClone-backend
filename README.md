@@ -9,5 +9,6 @@ Foi utilizado NodeJs para o desenvolimento da API. Com o framework [express](htt
 ## Testar
 - Para testar, primeiro baixe ou clone o repositório. 
 - Entre no diretório e rode no terminal ```yarn``` ou ```ǹpm```.
+- Rodar no terminal ```yarn dev```.
 - Acessar http://localhost:3333
 - Recomendo utilizar o programa [Insomnia](https://insomnia.rest/) para testar, verá o retorno em JSON. 
